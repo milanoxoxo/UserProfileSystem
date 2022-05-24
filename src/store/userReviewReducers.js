@@ -1,6 +1,6 @@
-function usersProfileReducer(state='', action){
+function usersReviewReducer(state='', action){
   switch (action.type) {
-    case 'SET_USER':
+    case 'REVIEW_USER':
       console.log(action.payload)
       return action.payload;
     default:
@@ -8,4 +8,4 @@ function usersProfileReducer(state='', action){
   }
 }
 
-export default usersProfileReducer
+export default usersReviewReducer

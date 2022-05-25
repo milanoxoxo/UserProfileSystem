@@ -13,7 +13,7 @@ function Modal({ setOpenModal, review }) {
   const handleClick = () => {
     console.log(review)
     dispatch(updateUser(review))
-    navigate('/')
+    navigate('/success')
   }
 
   return (

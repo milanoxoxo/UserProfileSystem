@@ -58,7 +58,7 @@ const Users = () => {
       >
         Fetch Users
       </Button>
-      <UserItem user={data}></UserItem>
+      <UserItem user={data} style={{marginLeft:'30rem'}}></UserItem>
     </div>
   );
   // }

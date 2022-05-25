@@ -31,6 +31,7 @@ const UserItem = (props) => {
     <TableContainer
       component={Paper}
       sx={{ maxHeight: "400px", maxWidth: "600px" }}
+      style={{marginLeft:'22rem'}}
     >
       <Table aria-label="simple table" stickyHeader>
         <TableHead>

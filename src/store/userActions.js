@@ -9,7 +9,6 @@ export const fetchUsers = (userData) => {
 }
 
 export const setUser = (user) => {
-  console.log(user)
   return {
     type:'SET_USER',
     payload:user
@@ -17,9 +16,16 @@ export const setUser = (user) => {
 }
 
 export const reviewUser = (values) => {
-  console.log(values)
   return {
     type:'REVIEW_USER',
     payload:values
   };
+}
+
+export const updateUser = (review) => {
+  console.log(review)
+  return {
+    type:'UPDATE_USER',
+    payload:review
+  }
 }

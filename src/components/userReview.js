@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import Button from "@mui/material/Button";
 import Modal from "./Modal";
 
@@ -24,7 +24,6 @@ const dummy = [
 const UserReview = (values) => {
   const review = useSelector((state) => state.usersReviewReducer);
   const [imageUrl, setImageUrl] = useState(null);
-  const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
@@ -33,14 +32,15 @@ const UserReview = (values) => {
     }
   }, [review.photo]);
 
-  // const handleSubmit = () => {
-  //   // dispatch(submitUser(true))
-  //   // navigate('/submit')
-  // };
+  const handleSubmit = () => {
+    // dispatch(submitUser(true))
+    // navigate('/submit')
+
+  };
 
   return (
     <div>
-      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+      {modalOpen && <Modal setOpenModal={setModalOpen} review={review} />}
       {!modalOpen && (
         <>
           <h2>Reivew</h2>
@@ -82,7 +82,7 @@ const UserReview = (values) => {
                   className="openModalBtn"
                   variant="contained"
                   color="primary"
-                  type="submit"
+                  // type="submit"
                   style={{ width: "10rem", margin: "5rem" }}
                   onClick={() => setModalOpen(true)}
                 >

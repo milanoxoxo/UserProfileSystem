@@ -1,8 +1,21 @@
 import React from "react";
 import "./Modal.css";
 import Button from "@mui/material/Button";
+import { useDispatch } from "react-redux";
+import { updateUser } from "../store/userActions";
+import {useNavigate}  from "react-router-dom";
 
-function Modal({ setOpenModal }) {
+
+function Modal({ setOpenModal, review }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    console.log(review)
+    dispatch(updateUser(review))
+    navigate('/')
+  }
+
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -27,7 +40,7 @@ function Modal({ setOpenModal }) {
           >
             Dismiss
           </Button>
-          <Button color="primary" variant="contained">Yes</Button>
+          <Button color="primary" variant="contained" onClick={handleClick}>Yes</Button>
         </div>
       </div>
     </div>

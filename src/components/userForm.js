@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -78,7 +78,7 @@ const UserProfileForm = React.forwardRef(
             </FormControl>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <Stack marginTop={4} marginLeft={2} width="90%">
-                <DesktopDatePicker
+                <DatePicker
                   label="Date of Birth(YYYY-MM-DD)"
                   inputFormat="MM/dd/yyyy"
                   name="dob"
@@ -120,8 +120,6 @@ const UserProfileForm = React.forwardRef(
                 </Button>
               </label>
               <p>
-                {console.log(values.photo)}
-                {console.log(values.photo.name)}
                 {values.photo ? values.photo.name : "No file chosen"}
               </p>
             </Stack>
@@ -132,8 +130,8 @@ const UserProfileForm = React.forwardRef(
               variant="outlined"
               label="Address"
               name="address"
-              //   value={values.address}
-              //   onChange={handleChange}
+                value={values.address}
+              onChange={handleChange}
               inputRef={ref}
               sx={{ m: 2, width: "90%" }}
             />

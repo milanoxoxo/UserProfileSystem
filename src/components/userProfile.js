@@ -58,6 +58,7 @@ const UserProfile = (props) => {
     place.address_components.forEach((component) => {
       const types = component.types;
       const value = component.long_name;
+      console.log(component)
 
       if (types.includes("locality", "sublocality_level_1", "sublocality")) {
         setValues((prevState) => {
@@ -114,7 +115,9 @@ const UserProfile = (props) => {
   };
 
   const handleChangeDate = (newValue) => {
-    setValues({ ...values, dob: newValue });
+    const date = new Date(newValue).toLocaleDateString()
+    console.log(date)
+    setValues({ ...values, dob: date });
   };
 
   const handleChangePhoto = (e) => {

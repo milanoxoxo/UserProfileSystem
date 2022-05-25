@@ -17,9 +17,6 @@ function usersReducer(state = initalState, action) {
       return { ...state, loading: false, users };
     case "UPDATE_USER":
       const updateuser = action.payload;
-      console.log("update user", updateuser);
-      console.log("state user", state.users);
-      // const res = state.users.map(obj => updateuser.id === obj.id || obj);
       state.users.forEach((element, index) => {
         if (element.id === updateuser.id) {
           state.users[index] = updateuser;
